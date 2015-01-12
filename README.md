@@ -45,11 +45,21 @@ Type: boolean
 
 Use to fully expand the tree by default
 
+```html
+<ui-treeview expanded></ui-treeview>
+```
+
 ## Methods
 
 ### display(data : Object)
 
 Use to pass data a JavaScript object to display.
+
+```javascript
+var element = document.getElementById('myTreeId');
+var object = { foo : "bar", baz : 4 };
+element.display(object);
+```
 
 ## License
 
