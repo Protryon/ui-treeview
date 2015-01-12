@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>&lt;ui-treeview&gt;</title>
+
+    <script src="components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <link rel="import" href="components/src/component.html">
+</head>
+<body>
+
+<ui-treeview expanded>
+{
+    "root": {
+        "level1-1": "example value",
+        "level1-2": {
+            "level2-1": "value",
+            "level2-2": [],
+            "level2-3": {
+                "level3-1": {
+                    "level4-1": 42,
+                    "level4-2": "string",
+                    "level4-3": "string",
+                    "level4-4": "string",
+                    "level4-5": "string",
+                    "level4-6": {
+                        "level5-1": "string",
+                        "level5-2": ["arrayval1", "arrayval2"]
+                    },
+                    "level4-7": "string"
+                }
+            }
+        }
+    }
+}
+</ui-treeview>
+
+</body>
+</html>
