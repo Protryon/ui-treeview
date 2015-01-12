@@ -1,40 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>&lt;ui-treeview&gt;</title>
+  <meta charset="UTF-8">
+  <title>&lt;ui-treeview&gt;</title>
 
-    <script src="components/webcomponentsjs/webcomponents.min.js"></script>
+  <script src="components/webcomponentsjs/webcomponents.min.js"></script>
 
-    <link rel="import" href="components/src/component.html">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+  <link rel="import" href="components/src/component.html">
+  <style>
+    ui-treeview {
+      padding:16px 0
+    }
+    pre {
+      font-size:16px;
+    }
+    .el {
+      color : #890382
+    }
+    .attr {
+      color:#9a4500;
+    }
+  </style>
 </head>
 <body>
-
-<ui-treeview expanded>
-{
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1>&lt;ui-treeview&gt;</h1>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-1-2">
+<pre><span class="el">&lt;ui-treeview <span class="attr">expanded</span>&gt;</span>
+  {
     "root": {
+      "level1-1": "example value",
+      "level1-2": {
+        "level2-1": "value",
+        "level2-2": [],
+        "level2-3": {
+          "level3-1": {
+            "level4-1": 42,
+            "level4-2": "string",
+            "level4-3": "string",
+            "level4-4": "string",
+            "level4-5": "string",
+            "level4-6": {
+              "level5-1": "string",
+              "level5-2": ["arrayval1", "arrayval2"]
+            },
+            "level4-7": "string"
+          }
+        }
+      }
+    }
+  }
+&lt;/ui-treeview&gt;
+</pre>
+    </div>
+    <div class="pure-u-1-2">
+      <ui-treeview expanded>
+        {
+        "root": {
         "level1-1": "example value",
         "level1-2": {
-            "level2-1": "value",
-            "level2-2": [],
-            "level2-3": {
-                "level3-1": {
-                    "level4-1": 42,
-                    "level4-2": "string",
-                    "level4-3": "string",
-                    "level4-4": "string",
-                    "level4-5": "string",
-                    "level4-6": {
-                        "level5-1": "string",
-                        "level5-2": ["arrayval1", "arrayval2"]
-                    },
-                    "level4-7": "string"
-                }
-            }
+        "level2-1": "value",
+        "level2-2": [],
+        "level2-3": {
+        "level3-1": {
+        "level4-1": 42,
+        "level4-2": "string",
+        "level4-3": "string",
+        "level4-4": "string",
+        "level4-5": "string",
+        "level4-6": {
+        "level5-1": "string",
+        "level5-2": ["arrayval1", "arrayval2"]
+        },
+        "level4-7": "string"
         }
-    }
-}
-</ui-treeview>
+        }
+        }
+        }
+        }
+      </ui-treeview>
+    </div>
+  </div>
+
 
 </body>
 </html>
