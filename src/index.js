@@ -115,7 +115,7 @@ class UiTreeViewObject extends PolymerElement {
   }
 
   entries(obj) {
-    return Object.keys(obj).map(key => ({key, value: obj[key]}));
+    return obj === null ? [] : Object.keys(obj).map(key => ({key, value: obj[key]}));
   }
 
   stringify(obj) {
