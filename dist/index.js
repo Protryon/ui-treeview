@@ -8793,7 +8793,6 @@ class UiTreeViewCollapsible extends _polymerElement.PolymerElement {
       display:inline-block;
       width:8px;
     }
-
     :host > .expanded > #body {
       margin-left:1em;
       display:block;
@@ -8869,7 +8868,7 @@ class UiTreeViewObject extends _polymerElement.PolymerElement {
   }
 
   entries(obj) {
-    return Object.keys(obj).map(key => ({ key, value: obj[key] }));
+    return obj === null ? [] : Object.keys(obj).map(key => ({ key, value: obj[key] }));
   }
 
   stringify(obj) {
@@ -9115,6 +9114,8 @@ class UiTreeView extends _polymerElement.PolymerElement {
     <style>
       :host {
         display:block;
+        margin-left: 1em;
+        margin-right: 1em;
       }
       ::shadow /deep/ .title:hover {
         background-color:hsl(230,50%,85%);

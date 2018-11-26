@@ -39,7 +39,6 @@ class UiTreeViewCollapsible extends PolymerElement {
       display:inline-block;
       width:8px;
     }
-
     :host > .expanded > #body {
       margin-left:1em;
       display:block;
@@ -363,6 +362,8 @@ class UiTreeView extends PolymerElement {
     <style>
       :host {
         display:block;
+        margin-left: 1em;
+        margin-right: 1em;
       }
       ::shadow /deep/ .title:hover {
         background-color:hsl(230,50%,85%);
