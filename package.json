@@ -1,6 +1,6 @@
 {
   "name": "ui-treeview",
-  "version": "1.0.7",
+  "version": "1.0.1",
   "description": "javascript object data display as a tree",
   "main": "demo.html",
   "scripts": {
