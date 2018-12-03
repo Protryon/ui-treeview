@@ -8817,11 +8817,15 @@ class UiTreeViewCollapsible extends _polymerElement.PolymerElement {
       transform:  translate(-2px,1px) rotate(90deg);
       /*-webkit-transform:  rotate(90deg);*/
     }
-
-
+    .unselectable {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
   </style>
   <div class$={{divClasses()}} id="primary">
-    <span id="title" on-click="toggle">
+    <span id="title" on-click="toggle" class="unselectable">
       <span id="caret">
         <svg xmlns="http://www.w3.org/2000/svg" id="caretSvg" width="14" height="14" viewBox="0 0 14 14">
           <path d="M0 0v16l6-6-6-6z" transform="translate(4,-3)" />
@@ -8877,10 +8881,19 @@ class UiTreeViewObject extends _polymerElement.PolymerElement {
 
   static get template() {
     return _polymerElement.html`
+<style>
+  .key {
+    color:#606aa1;
+  }
+  .hoverable:hover {
+    background-color:hsl(230,50%,85%);
+    cursor:pointer;
+  }
+</style>
 <template is="dom-repeat" items="{{entries(data)}}" as="entry">
   <template is="dom-if" if="{{ isObject(entry.value) }}">
     <ui-treeview-collapsible expanded={{expanded}}>
-      <span class="title key" slot="title">
+      <span class="title hoverable key" slot="title">
         {{entry.key}}:
       </span>
       <span class="indicator" slot="indicator">{...}</span>
@@ -8892,7 +8905,7 @@ class UiTreeViewObject extends _polymerElement.PolymerElement {
     <template is="dom-if" if="{{ isArray(entry.value) }}">
     <template is="dom-if" if="{{!entry.value.length}}">
       <ui-treeview-collapsible expanded inline>
-        <span class="title key" slot="title">
+        <span class="title hoverable key" slot="title">
           {{entry.key}}:
         </span>
         <div class="body value" slot="body">
@@ -8902,7 +8915,7 @@ class UiTreeViewObject extends _polymerElement.PolymerElement {
     </template>
     <template is="dom-if" if="{{entry.value.length}}">
       <ui-treeview-collapsible expanded={{expanded}}>
-        <span class="title key" slot="title">
+        <span class="title hoverable key" slot="title">
           {{entry.key}}:
         </span>
         <span class="indicator" slot="indicator">[...]</span>
@@ -8960,10 +8973,19 @@ class UiTreeViewArray extends _polymerElement.PolymerElement {
 
   static get template() {
     return _polymerElement.html`
+    <style>
+      .key {
+        color:#606aa1;
+      }
+      .hoverable:hover {
+        background-color:hsl(230,50%,85%);
+        cursor:pointer;
+      }
+    </style>
     <template is="dom-repeat" items="{{data}}" as="value" index-as="i">
       <template is="dom-if" if="{{ isObject(value) }}">
         <ui-treeview-collapsible expanded={{expanded}}>
-          <span class="title key" slot="title">
+          <span class="title hoverable key" slot="title">
           {{i}}:
           </span>
           <span class="indicator" slot="indicator">{...}</span>
@@ -8975,7 +8997,7 @@ class UiTreeViewArray extends _polymerElement.PolymerElement {
       <template is="dom-if" if="{{ isArray(value) }}">
         <template is="dom-if" if="{{!value.length}}">
           <ui-treeview-collapsible expanded inline>
-          <span class="title key" slot="title">
+          <span class="title hoverable key" slot="title">
           {{i}}:
           </span>
             <span class="indicator" slot="indicator">[...]</span>
@@ -8986,7 +9008,7 @@ class UiTreeViewArray extends _polymerElement.PolymerElement {
         </template>
         <template is="dom-if" if="{{value.length}}">
           <ui-treeview-collapsible expanded={{expanded}}>
-          <span class="title key" slot="title">
+          <span class="title hoverable key" slot="title">
           {{i}}:
           </span>
             <span class="indicator" slot="indicator">[...]</span>
@@ -9035,6 +9057,17 @@ class UiTreeViewSimple extends _polymerElement.PolymerElement {
 
   static get template() {
     return _polymerElement.html`
+    <style>
+      .value .other {
+        color: rgb(50, 47, 51);
+      }
+      .value .string {
+        color: rgb(218, 86, 74);
+      }
+      .value .number {
+        color: rgb(70, 135, 184);
+      }
+    </style>
     <span class="value">
       <template is="dom-if" if="{{isString(data)}}">
         <span class="string">
@@ -9117,25 +9150,9 @@ class UiTreeView extends _polymerElement.PolymerElement {
         margin-left: 1em;
         margin-right: 1em;
       }
-      ::shadow /deep/ .title:hover {
-        background-color:hsl(230,50%,85%);
-        cursor:pointer;
-      }
-      ::shadow /deep/ * {
+      * {
         font-family: Consolas, "Liberation Mono", Courier, monospace;
         font-size:16px;
-      }
-      ::shadow /deep/ .key {
-        color:#606aa1;
-      }
-      ::shadow /deep/ .value .other {
-        color: rgb(50, 47, 51);
-      }
-      ::shadow /deep/ .value .string {
-        color: rgb(218, 86, 74);
-      }
-      ::shadow /deep/ .value .number {
-        color: rgb(70, 135, 184);
       }
     </style>
     <template is="dom-if" if="{{ isObject(data) }}">
