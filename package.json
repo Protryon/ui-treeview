@@ -1,8 +1,8 @@
 {
-  "name": "ui-treeview-2",
+  "name": "ui-treeview",
   "version": "1.0.7",
   "description": "javascript object data display as a tree",
-  "main": "ui-treeview.html",
+  "main": "demo.html",
   "scripts": {
     "build": "browserify src/index.js -o dist/index.js --global-transform [ babelify --plugins [ transform-es2015-modules-commonjs ] ] "
   },

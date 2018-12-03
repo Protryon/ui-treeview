@@ -5,12 +5,6 @@ Web component used to display JSON & JavaScript object data in a collapsible tre
 
 <img src="./ui-treeview.png">
 
-## Author
-
-Originally created by [jsoverson](https://github.com/jsoverson), [here](https://github.com/jsoverson/ui-treeview)
-
-Upgraded to Polymer 3.0 by Protryon
-
 ## Usage
 
 [Demo](http://jsoverson.github.io/ui-treeview)
