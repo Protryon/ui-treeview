@@ -395,8 +395,7 @@ class UiTreeView extends PolymerElement {
     <style>
       :host {
         display:block;
-        margin-left: 1em;
-        margin-right: 1em;
+        padding-left: 1em;
       }
       * {
         font-family: Consolas, "Liberation Mono", Courier, monospace;
