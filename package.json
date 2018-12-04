@@ -7,7 +7,7 @@
     "build": "browserify src/index.js -o dist/index.js --global-transform [ babelify --plugins [ transform-es2015-modules-commonjs ] ] "
   },
   "author": "",
-  "license": "MIT",
+  "license": "None",
   "dependencies": {
     "@polymer/polymer": "3.1.0",
     "@webcomponents/webcomponentsjs": "2.2.0"

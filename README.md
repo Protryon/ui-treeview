@@ -63,4 +63,4 @@ element.display(object);
 
 ## License
 
-MIT
+None
